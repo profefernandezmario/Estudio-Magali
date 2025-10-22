@@ -103,8 +103,7 @@
 
           <div class="hero-art">
             <div class="sticker-mock">
-              <img src="media/Collage stickers.png" alt="collage de las planchas de stickers"
-                class="responsive-img" />
+              <img src="media/Collage stickers.png" alt="collage de las planchas de stickers" class="responsive-img" />
             </div>
           </div>
         </div>
@@ -164,7 +163,8 @@
       <div class="servicios-inner">
         <header class="servicios-header">
           <h2 class="section-title">Nuestros Servicios</h2>
-          <p class="servicios-subtitle">Soluciones integrales desde el diseño hasta la entrega. Calidad, asesoría y envío según tus necesidades.</p>
+          <p class="servicios-subtitle">Soluciones integrales desde el diseño hasta la entrega. Calidad, asesoría y
+            envío según tus necesidades.</p>
         </header>
 
         <div class="services-grid">
@@ -172,7 +172,8 @@
             <div class="service-icon" aria-hidden="true">🎨</div>
             <div class="service-body">
               <h3>Diseño y Preimpresión</h3>
-              <p>Diseños personalizados, corrección de color y archivos listos para impresión con estándares profesionales.</p>
+              <p>Diseños personalizados, corrección de color y archivos listos para impresión con estándares
+                profesionales.</p>
             </div>
           </div>
 
@@ -188,7 +189,8 @@
             <div class="service-icon" aria-hidden="true">🚚</div>
             <div class="service-body">
               <h3>Envíos a Domicilio</h3>
-              <p>Envios seguros y rápidos a todo el país; embalaje profesional para que tus stickers lleguen perfectos.</p>
+              <p>Envios seguros y rápidos a todo el país; embalaje profesional para que tus stickers lleguen perfectos.
+              </p>
             </div>
           </div>
         </div>
@@ -202,20 +204,23 @@
     <!-- Contacto Section -->
     <section id="contacto" class="container contacto">
       <h2 class="section-title">Contacto</h2>
-      <form class="form" action="#" method="post">
+      <form id="contactForm" class="form" action="#" method="post">
         <label>
           Nombre
-          <input type="text" name="nombre" placeholder="Tu nombre" required />
+          <input type="text" name="nombre" id="nombre" placeholder="Tu nombre" required />
         </label>
         <label>
-          Email
-          <input type="email" name="email" placeholder="tu@correo.com" required />
+          Celular
+          <input type="tel" name="celular" id="celular" placeholder="+549362..." />
         </label>
         <label>
           Mensaje
-          <textarea name="mensaje" rows="4" placeholder="¿En qué te podemos ayudar?" required></textarea>
+          <textarea name="mensaje" id="mensaje" rows="4" placeholder="¿En qué te podemos ayudar?" required></textarea>
         </label>
-        <button class="btn" type="submit">Enviar Mensaje</button>
+        <div style="display:flex;gap:.75rem;align-items:center">
+          <button class="btn" type="submit">Enviar Mensaje por WhatsApp</button>
+          <p id="contactFeedback" aria-live="polite" style="margin:0;font-size:.95rem;color:var(--text-light)"></p>
+        </div>
       </form>
     </section>
 
@@ -228,12 +233,52 @@
     </div>
   </main>
 
-  <footer class="site-footer">
+  <!-- <footer class="site-footer">
     <div class="container">
       <p style="text-align: center;"><small>&copy; Estudio Magali — 2025 - Resistencia - Chaco</p>
+
+    </div>
+  </footer> -->
+  <span style="margin-top: 0.5em;"></span>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <p class="copyright" style="margin:0;">
+          <small>© Estudio Magali — 2025 - Resistencia - Chaco</small>
+        </p>
+
+        <div class="footer-social">
+          <a class="instagram-link" href="https://www.instagram.com/estudiomagalistickers" target="_blank"
+            rel="noopener noreferrer" aria-label="Instagram Estudio Magali">
+            <!-- Icono Instagram (SVG) -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <path
+                d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.5A4.5 4.5 0 1 0 16.5 13 4.5 4.5 0 0 0 12 8.5zm6.7-2.9a1.1 1.1 0 1 0 1.1 1.1 1.1 1.1 0 0 0-1.1-1.1z" />
+            </svg>
+            <span class="instagram-username">@estudiomagalistickers</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- <div class="footer-bottom">
+        <p style="margin:0;color:var(--text-light);font-size:.95rem;">
+          Hecho con ❤ — Resistencia, Chaco — <a href="https://api.whatsapp.com/send?phone=5493624003295" target="_blank"
+            rel="noopener noreferrer">WhatsApp</a>
+        </p>
+      </div> -->
+
+      <!-- Nueva línea: contacto del diseñador web -->
+      <div class="footer-designer">
+        <p style="margin:0;"><small>
+            Diseño web y soporte técnico:
+            <a href="https://api.whatsapp.com/send?phone=5493624096688&text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20sobre%20mi%20sitio%20web"
+              target="_blank" rel="noopener noreferrer">
+              WhatsApp +54 9 3624 096688
+            </a>
+        </p>
+      </div>
     </div>
   </footer>
-
   <script src="estudioMagali.js"></script>
 </body>
 

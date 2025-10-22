@@ -72,4 +72,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.querySelectorAll('.card, .service-card').forEach((el) => observer.observe(el));
+
+
+    /* desde aquí, código para el formulario de contacto vía WhatsApp */
+    const contactForm = document.getElementById('contactForm');
+    const feedback = document.getElementById('contactFeedback');
+    const TARGET_PHONE = '5493624003295'; // sin '+' y sin espacios
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            feedback.textContent = 'Preparando mensaje...';
+
+            const nombre = document.getElementById('nombre')?.value.trim() || '';
+            const celular = document.getElementById('celular')?.value.trim() || 'No provisto';
+            const mensaje = document.getElementById('mensaje')?.value.trim() || '';
+
+            if (!nombre || !mensaje) {
+                feedback.textContent = 'Por favor completa nombre y mensaje.';
+                return;
+            }
+
+            const text = `Nuevo contacto desde web:%0ANombre: ${nombre}%0ACelular: ${celular}%0AMensaje: ${mensaje}`;
+            const url = `https://api.whatsapp.com/send?phone=${TARGET_PHONE}&text=${text}`;
+
+            // abrir en nueva pestaña
+            window.open(url, '_blank');
+
+            feedback.textContent = 'Se abrió WhatsApp. Completa el envío en la nueva pestaña.';
+            // opcional: limpiar form
+            // contactForm.reset();
+        });
+    }
 });

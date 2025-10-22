@@ -650,3 +650,113 @@ img {
     font-family: 'Inter', sans-serif;
     text-shadow: 3px 3px 3px var(--primary)
 }
+
+/* Footer - cuenta Instagram */
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.footer-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+}
+
+/* Ajustes del bloque social: icono + usuario */
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .35rem .6rem;
+  border-radius: 999px;
+  color: var(--text);
+  background: linear-gradient(90deg, rgba(233,30,99,0.04), transparent);
+  text-decoration: none;
+  transition: all .18s ease;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.instagram-link svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.instagram-username {
+  font-weight: 600;
+  color: var(--text);
+  font-size: .95rem;
+}
+
+/* Hover */
+.instagram-link:hover {
+  color: #fff;
+  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Línea extra en footer: diseñador web */
+.footer-designer {
+  width: 100%;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+
+.footer-designer a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 0.35rem;
+}
+
+.footer-designer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive: centrar todo en móviles */
+@media (max-width: 600px) {
+  .footer-top {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .instagram-username {
+    display: inline-block;
+    font-size: .9rem;
+  }
+}
+
+/* Elemento accesible oculto */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
