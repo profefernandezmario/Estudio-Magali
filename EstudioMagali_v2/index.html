@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="estudioMagali.css">
 </head>
 
-<body >
+<body>
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -120,9 +120,35 @@
             <h2>¡LISTO PARA EXPRESARTE?</h2>
             <p>Únete a decenas de personas que ya han transformado sus pertenencias con nuestros stickers únicos.
                 Personaliza tu mundo hoy!!.</p>
-            <button class="btn btn-dark btn-lg">Comprar Ahora</button>
+            <!-- <button class="btn btn-dark btn-lg">Comprar Ahora</button> 
+             -->
+            <button id="openModal" class="btn btn-dark btn-lg">Comprar Ahora</button>
             <!-- ******************************************** -->
             <!-- agregar form de contacto -->
+            <!-- Modal Form -->
+            <div id="contactModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2 class="text-center mb-4">Contáctanos vía WhatsApp</h2>
+                    <form id="whatsappForm">
+                        <div class="form-group">
+                            <label for="fullName">Nombre y Apellido</label>
+                            <input type="text" id="fullName" class="form-control" required
+                                placeholder="Ingresa tu nombre completo">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Número de Celular</label>
+                            <input type="tel" id="phone" class="form-control" required placeholder="Ej: 5493624096688">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" class="form-control" rows="4" required
+                                placeholder="Escribe tu mensaje..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Enviar a WhatsApp</button>
+                    </form>
+                </div>
+            </div>
             <!-- ******************************************** -->
 
 
@@ -156,7 +182,9 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="estudioMagali.js"></script>
+    <!-- <script src="estudioMagali.js"></script> -->
+    <!-- <script src="formContacto.js"></script> -->
+     <script src="nuevoFormContacto.js"></script>
 </body>
 
 </html>
