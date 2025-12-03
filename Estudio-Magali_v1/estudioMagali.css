@@ -1,0 +1,787 @@
+:root {
+    --bg: #ffffff;
+    --primary: #e91e63;
+    --primary-dark: #c2185b;
+    --secondary: #2196f3;
+    --accent: #ffb86b;
+    --text: #333333;
+    --text-light: #666666;
+    --background: #ffffff;
+    --background-alt: #f8f9fa;
+    --border: #e2e8f0;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+.sedan-sc-regular {
+    font-family: "Sedan SC", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.fuente-logo {
+    font-family: sedan-sc-regular;
+    font-weight: 700;
+    font-size: 3.5rem;
+    text-shadow: 3px 3px 3px var(--primary);
+}
+
+/* Reset y base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Inter, system-ui, sans-serif;
+    line-height: 1.5;
+    color: #111827;
+    background: linear-gradient(180deg, #fff 0%, #f7f7fb 100%);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: min(var(--container), 100% - 2rem);
+    margin-inline: auto;
+    padding: var(--padding);
+    margin-top: 2em;
+}
+
+/* Header Responsive */
+.site-header {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+}
+
+.site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap);
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* Grid y Cards */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: var(--gap);
+}
+
+.card {
+    background: var(--background);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-description {
+    margin-top: 1.5rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.highlight {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* Imágenes */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--gap);
+}
+
+.preview-img-container {
+    width: 100%;
+    text-align: center;
+}
+
+.preview-img {
+    width: 100%;
+    border-radius: var(--radius);
+    transition: transform 0.3s ease;
+}
+
+/* Zoom y Modal */
+.zoom-container {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 2vmin;
+}
+
+.zoom-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zoomed {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    transition: transform 0.25s ease;
+    transform: scale(1.3);
+    /* zoom 130% */
+}
+
+/* botón cerrar */
+.close-zoom {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: #ff4d6d;
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Hero Section */
+.hero {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    overflow: hidden;
+}
+
+.hero-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.hero-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.features-art-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+
+}
+
+.hero-art {
+    margin-top: 2rem;
+    /* Alinear con el inicio del features-container */
+}
+
+.hero-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+    font-weight: 700;
+}
+
+.hero-description {
+    margin-bottom: 2rem;
+}
+
+.lead {
+    font-size: 1.25rem;
+    color: var(--text);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.secondary {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.features-container {
+    background: white;
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    margin: 2rem 0;
+    box-shadow: 4px 4px 10px black;
+}
+
+.features-title {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.features-list {
+    list-style: none;
+    display: grid;
+    gap: 1.25rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-alt);
+    border-radius: 50%;
+}
+
+.feature-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.feature-content strong {
+    color: var(--text);
+}
+
+.feature-content span {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(233, 30, 99, 0.2);
+}
+
+.hero-art {
+    position: relative;
+
+}
+
+.sticker-mock {
+    position: relative;
+    z-index: 1;
+}
+
+.responsive-img {
+    width: 61%;
+    height: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* Sección Servicios - Mejora estética */
+.servicios {
+    padding: 4rem 0;
+    background: linear-gradient(180deg, rgba(233, 30, 99, 0.03), rgba(255, 255, 255, 0));
+}
+
+.servicios-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.servicios-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 1rem;
+}
+
+.servicios-subtitle {
+    color: var(--text-light);
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Grid de tarjetas */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+/* Tarjeta */
+.service-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: #fff;
+    padding: 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    border: 1px solid rgba(16, 24, 40, 0.03);
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(16, 24, 40, 0.10);
+}
+
+/* Icono circular */
+.service-icon {
+    min-width: 56px;
+    min-height: 56px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 1.4rem;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    box-shadow: 0 6px 18px rgba(233, 30, 99, 0.12);
+    flex-shrink: 0;
+}
+
+/* Cuerpo de la tarjeta */
+.service-body h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.05rem;
+    color: var(--text);
+}
+
+.service-body p {
+    margin: 0;
+    color: var(--text-light);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* CTA centrada */
+.servicios-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-inner {
+        flex-direction: column;
+    }
+
+    .preview-img-container {
+        margin-bottom: var(--gap);
+    }
+}
+
+@media (max-width: 968px) {
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .features-art-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .hero-art {
+        margin-top: 0;
+        order: -1;
+    }
+
+    .features-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .servicios {
+        padding: 2.5rem 0;
+    }
+
+    .service-card {
+        padding: 1rem;
+    }
+
+    .service-icon {
+        min-width: 48px;
+        min-height: 48px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --padding: 1rem;
+        --gap: 0.75rem;
+    }
+
+    .hero {
+        padding: 2rem 0;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .lead {
+        font-size: 1.1rem;
+    }
+
+    .features-container {
+        padding: 1.5rem;
+    }
+
+    .card {
+        padding: var(--padding);
+    }
+
+    .hero-header {
+        text-align: left;
+    }
+
+    .servicios-header {
+        text-align: left;
+    }
+
+    .servicios-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .services-grid {
+        gap: 1rem;
+    }
+}
+
+/* Estilos del formulario */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-weight: 500;
+    color: var(--muted);
+}
+
+.form input,
+.form textarea {
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-family: inherit;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05),
+        0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.form input:focus,
+.form textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.1);
+}
+
+.form input:hover,
+.form textarea:hover {
+    border-color: var(--primary);
+}
+
+.form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form .btn {
+    align-self: flex-start;
+    padding: 0.75rem 2rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form .btn:hover {
+    background-color: #d11a59;
+}
+
+/* Estilos generales mejorados */
+/* Mejoras en las tarjetas */
+.card {
+    background: var(--background);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-description {
+    margin-top: 1.5rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.highlight {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* Mejoras en la navegación */
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    background: var(--background-alt);
+    color: var(--primary);
+}
+
+/* Botones mejorados */
+.btn {
+    background: var(--primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
+    border: none;
+    font-weight: 500;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Animaciones suaves */
+.service-card,
+.preview-img,
+.btn {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tit-prod-destacados {
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'Inter', sans-serif;
+    text-shadow: 3px 3px 3px var(--primary)
+}
+
+/* Footer - cuenta Instagram */
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.footer-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+}
+
+/* Ajustes del bloque social: icono + usuario */
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .35rem .6rem;
+    border-radius: 999px;
+    color: var(--text);
+    background: linear-gradient(90deg, rgba(233, 30, 99, 0.04), transparent);
+    text-decoration: none;
+    transition: all .18s ease;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.instagram-link svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.instagram-username {
+    font-weight: 600;
+    color: var(--text);
+    font-size: .95rem;
+}
+
+/* Hover */
+.instagram-link:hover {
+    color: #fff;
+    background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Línea extra en footer: diseñador web */
+.footer-designer {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+.footer-designer a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 0.35rem;
+}
+
+.footer-designer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive: centrar todo en móviles */
+@media (max-width: 600px) {
+    .footer-top {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .instagram-username {
+        display: inline-block;
+        font-size: .9rem;
+    }
+}
+
+/* Elemento accesible oculto */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.flex-gap-1 {
+    display: flex;
+    gap: .75rem;
+    align-items: center;
+}
+
+.feedback {
+    margin: 0;
+    font-size: .95rem;
+    color: var(--text-light);
+    text-align: center;
+}
