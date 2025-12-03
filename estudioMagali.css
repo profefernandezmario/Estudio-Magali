@@ -21,10 +21,15 @@
 
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(22, 33, 62, 0.9)), url('https://placehold.co/1920x1080/4ecdc4/1a1a2e?text=STICKERS') no-repeat center center/cover;
+            
+            background: linear-gradient(rgba(235, 67, 95, 0.8), rgba(47, 48, 46, 0.9)), url('https://placehold.co/1920x1080/4ecdc4/1a1a2e?text=STICKERS') no-repeat center center/cover;
             display: flex;
             align-items: center;
             position: relative;
+            /* background-image: url(media/logos/EMS.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto; */
         }
 
         .hero-content {
@@ -48,6 +53,14 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .hero-logo-nuevo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: auto;
         }
 
         .btn-custom {
